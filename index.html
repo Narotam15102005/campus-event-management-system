@@ -1,1 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>CampusX | Campus Event Management</title>
+
+    <meta
+        name="description"
+        content="CampusX is a modern campus event management platform for discovering, exploring and registering for college events."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                Campus<span>X</span>
+            </a>
+
+            <button class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation menu">
+                ☰
+            </button>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home" onclick="closeMenu()">Home</a>
+                </li>
+
+                <li>
+                    <a href="#events" onclick="closeMenu()">Events</a>
+                </li>
+
+                <li>
+                    <a href="#about" onclick="closeMenu()">About</a>
+                </li>
+
+                <li>
+                    <a href="#contact" onclick="closeMenu()">Contact</a>
+                </li>
+
+            </ul>
+
+            <a href="#events" class="nav-button">
+                Explore Events
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    🎓 Campus Life • Connected
+                </div>
+
+                <h1>
+                    Discover What's
+                    <span>Happening</span>
+                    on Campus.
+                </h1>
+
+                <p>
+                    Discover workshops, hackathons, cultural programs,
+                    sports activities and student events—all in one place.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#events" class="btn primary-btn">
+                        Explore Events →
+                    </a>
+
+                    <a href="#about" class="btn secondary-btn">
+                        Learn More
+                    </a>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <strong>25+</strong>
+                        <span>Events</span>
+                    </div>
+
+                    <div>
+                        <strong>500+</strong>
+                        <span>Students</span>
+                    </div>
+
+                    <div>
+                        <strong>15+</strong>
+                        <span>Clubs</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="visual-card main-card">
+
+                    <div class="visual-top">
+                        <span>UPCOMING EVENT</span>
+                        <span class="live-dot">● Live</span>
+                    </div>
+
+                    <div class="event-icon large">
+                        🚀
+                    </div>
+
+                    <h3>
+                        Campus Innovation Hackathon
+                    </h3>
+
+                    <p>
+                        Build. Innovate. Inspire.
+                    </p>
+
+                    <div class="visual-details">
+
+                        <span>📅 Aug 20, 2026</span>
+                        <span>📍 Innovation Lab</span>
+
+                    </div>
+
+                    <button class="visual-register" onclick="openRegistration('Campus Innovation Hackathon')">
+                        Register Now
+                    </button>
+
+                </div>
+
+                <div class="floating-card floating-one">
+                    🎨 Cultural Fest
+                </div>
+
+                <div class="floating-card floating-two">
+                    🏆 Sports Meet
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EVENT SECTION ================= -->
+
+        <section class="events-section section" id="events">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        EXPLORE
+                    </span>
+
+                    <h2>
+                        Upcoming Events
+                    </h2>
+
+                    <p>
+                        Find something exciting to learn, compete,
+                        connect and enjoy.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Search and Filter -->
+
+            <div class="event-controls">
+
+                <div class="search-box">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search events..."
+                        oninput="filterEvents()"
+                    >
+
+                </div>
+
+
+                <div class="filter-buttons">
+
+                    <button class="filter-btn active" onclick="filterCategory('all', this)">
+                        All
+                    </button>
+
+                    <button class="filter-btn" onclick="filterCategory('technical', this)">
+                        Technical
+                    </button>
+
+                    <button class="filter-btn" onclick="filterCategory('cultural', this)">
+                        Cultural
+                    </button>
+
+                    <button class="filter-btn" onclick="filterCategory('sports', this)">
+                        Sports
+                    </button>
+
+                    <button class="filter-btn" onclick="filterCategory('workshop', this)">
+                        Workshop
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Event Cards -->
+
+            <div class="events-grid" id="eventsGrid">
+
+
+                <!-- Event 1 -->
+
+                <article
+                    class="event-card"
+                    data-category="technical"
+                    data-title="Campus Innovation Hackathon"
+                >
+
+                    <div class="event-image technical-image">
+
+                        <span class="event-category">
+                            Technical
+                        </span>
+
+                        <div class="event-icon">
+                            🚀
+                        </div>
+
+                    </div>
+
+                    <div class="event-content">
+
+                        <div class="event-date">
+                            <strong>20</strong>
+                            <span>AUG</span>
+                        </div>
+
+                        <div class="event-info">
+
+                            <h3>
+                                Campus Innovation Hackathon
+                            </h3>
+
+                            <p>
+                                Build innovative solutions to real-world
+                                campus problems.
+                            </p>
+
+                            <div class="event-meta">
+                                <span>🕐 9:00 AM</span>
+                                <span>📍 Innovation Lab</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="event-footer">
+
+                        <span>
+                            👥 120 seats
+                        </span>
+
+                        <button onclick="openRegistration('Campus Innovation Hackathon')">
+                            Register
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Event 2 -->
+
+                <article
+                    class="event-card"
+                    data-category="workshop"
+                    data-title="AI & Machine Learning Workshop"
+                >
+
+                    <div class="event-image workshop-image">
+
+                        <span class="event-category">
+                            Workshop
+                        </span>
+
+                        <div class="event-icon">
+                            🤖
+                        </div>
+
+                    </div>
+
+                    <div class="event-content">
+
+                        <div class="event-date">
+                            <strong>24</strong>
+                            <span>AUG</span>
+                        </div>
+
+                        <div class="event-info">
+
+                            <h3>
+                                AI & Machine Learning Workshop
+                            </h3>
+
+                            <p>
+                                Learn practical AI concepts and build
+                                your first intelligent application.
+                            </p>
+
+                            <div class="event-meta">
+                                <span>🕐 10:00 AM</span>
+                                <span>📍 Seminar Hall</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="event-footer">
+
+                        <span>
+                            👥 80 seats
+                        </span>
+
+                        <button onclick="openRegistration('AI & Machine Learning Workshop')">
+                            Register
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Event 3 -->
+
+                <article
+                    class="event-card"
+                    data-category="sports"
+                    data-title="Inter Department Cricket Championship"
+                >
+
+                    <div class="event-image sports-image">
+
+                        <span class="event-category">
+                            Sports
+                        </span>
+
+                        <div class="event-icon">
+                            🏏
+                        </div>
+
+                    </div>
+
+                    <div class="event-content">
+
+                        <div class="event-date">
+                            <strong>28</strong>
+                            <span>AUG</span>
+                        </div>
+
+                        <div class="event-info">
+
+                            <h3>
+                                Inter Department Cricket Championship
+                            </h3>
+
+                            <p>
+                                Compete with different departments
+                                and represent your team.
+                            </p>
+
+                            <div class="event-meta">
+                                <span>🕐 8:00 AM</span>
+                                <span>📍 College Ground</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="event-footer">
+
+                        <span>
+                            👥 16 teams
+                        </span>
+
+                        <button onclick="openRegistration('Inter Department Cricket Championship')">
+                            Register
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Event 4 -->
+
+                <article
+                    class="event-card"
+                    data-category="cultural"
+                    data-title="Annual Cultural Fest"
+                >
+
+                    <div class="event-image cultural-image">
+
+                        <span class="event-category">
+                            Cultural
+                        </span>
+
+                        <div class="event-icon">
+                            🎭
+                        </div>
+
+                    </div>
+
+                    <div class="event-content">
+
+                        <div class="event-date">
+                            <strong>02</strong>
+                            <span>SEP</span>
+                        </div>
+
+                        <div class="event-info">
+
+                            <h3>
+                                Annual Cultural Fest
+                            </h3>
+
+                            <p>
+                                Celebrate music, dance, art and
+                                student creativity.
+                            </p>
+
+                            <div class="event-meta">
+                                <span>🕐 5:00 PM</span>
+                                <span>📍 Main Auditorium</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="event-footer">
+
+                        <span>
+                            👥 500 seats
+                        </span>
+
+                        <button onclick="openRegistration('Annual Cultural Fest')">
+                            Register
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Event 5 -->
+
+                <article
+                    class="event-card"
+                    data-category="technical"
+                    data-title="Web Development Challenge"
+                >
+
+                    <div class="event-image web-image">
+
+                        <span class="event-category">
+                            Technical
+                        </span>
+
+                        <div class="event-icon">
+                            💻
+                        </div>
+
+                    </div>
+
+                    <div class="event-content">
+
+                        <div class="event-date">
+                            <strong>06</strong>
+                            <span>SEP</span>
+                        </div>
+
+                        <div class="event-info">
+
+                            <h3>
+                                Web Development Challenge
+                            </h3>
+
+                            <p>
+                                Design and develop a creative web
+                                experience within a limited time.
+                            </p>
+
+                            <div class="event-meta">
+                                <span>🕐 10:00 AM</span>
+                                <span>📍 Computer Lab 2</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="event-footer">
+
+                        <span>
+                            👥 60 seats
+                        </span>
+
+                        <button onclick="openRegistration('Web Development Challenge')">
+                            Register
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Event 6 -->
+
+                <article
+                    class="event-card"
+                    data-category="workshop"
+                    data-title="Career & Resume Building Workshop"
+                >
+
+                    <div class="event-image career-image">
+
+                        <span class="event-category">
+                            Workshop
+                        </span>
+
+                        <div class="event-icon">
+                            💼
+                        </div>
+
+                    </div>
+
+                    <div class="event-content">
+
+                        <div class="event-date">
+                            <strong>10</strong>
+                            <span>SEP</span>
+                        </div>
+
+                        <div class="event-info">
+
+                            <h3>
+                                Career & Resume Building Workshop
+                            </h3>
+
+                            <p>
+                                Learn how to build a strong resume
+                                and prepare for placements.
+                            </p>
+
+                            <div class="event-meta">
+                                <span>🕐 2:00 PM</span>
+                                <span>📍 Placement Cell</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="event-footer">
+
+                        <span>
+                            👥 100 seats
+                        </span>
+
+                        <button onclick="openRegistration('Career & Resume Building Workshop')">
+                            Register
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div id="noEvents" class="no-events">
+                <div>🔎</div>
+                <h3>No events found</h3>
+                <p>Try another search or category.</p>
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="about-section section" id="about">
+
+            <div class="about-grid">
+
+                <div class="about-content">
+
+                    <span class="section-label">
+                        ABOUT CAMPUSX
+                    </span>
+
+                    <h2>
+                        One place for
+                        <span>every campus experience.</span>
+                    </h2>
+
+                    <p>
+                        CampusX is a student-focused event management
+                        platform designed to make campus activities
+                        easier to discover and participate in.
+                    </p>
+
+                    <p>
+                        From technical competitions and workshops to
+                        cultural programs and sports events, students
+                        can find opportunities that match their interests.
+                    </p>
+
+                    <a href="#events" class="text-link">
+                        Discover events →
+                    </a>
+
+                </div>
+
+
+                <div class="about-features">
+
+                    <div class="feature-card">
+                        <div>🔎</div>
+                        <h3>Discover</h3>
+                        <p>
+                            Find events that match your interests.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div>📝</div>
+                        <h3>Register</h3>
+                        <p>
+                            Reserve your place in just a few clicks.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div>🤝</div>
+                        <h3>Connect</h3>
+                        <p>
+                            Meet students and become part of campus life.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div>🚀</div>
+                        <h3>Grow</h3>
+                        <p>
+                            Learn skills through meaningful experiences.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section class="contact-section section" id="contact">
+
+            <div class="contact-box">
+
+                <span class="section-label">
+                    GET INVOLVED
+                </span>
+
+                <h2>
+                    Make your campus
+                    experience count.
+                </h2>
+
+                <p>
+                    Discover your next opportunity, join an event
+                    and connect with your campus community.
+                </p>
+
+                <a href="#events" class="btn primary-btn">
+                    Explore Events →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <a href="#home" class="logo footer-logo">
+                    Campus<span>X</span>
+                </a>
+
+                <p>
+                    Connecting students with meaningful
+                    campus experiences.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="#home">Home</a>
+                <a href="#events">Events</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 CampusX. Built for campus communities.
+            </p>
+
+            <p>
+                Student Project • Web Technology
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= REGISTRATION MODAL ================= -->
+
+    <div class="modal" id="registrationModal">
+
+        <div class="modal-content">
+
+            <button
+                class="modal-close"
+                onclick="closeRegistration()"
+                aria-label="Close registration"
+            >
+                ×
+            </button>
+
+            <div class="modal-icon">
+                📝
+            </div>
+
+            <h2>
+                Register for Event
+            </h2>
+
+            <p id="selectedEvent">
+                Event name
+            </p>
+
+            <form id="registrationForm">
+
+                <div class="form-group">
+
+                    <label for="studentName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="studentEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="studentEmail"
+                        placeholder="student@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="studentDepartment">
+                        Department
+                    </label>
+
+                    <select id="studentDepartment" required>
+
+                        <option value="">
+                            Select department
+                        </option>
+
+                        <option>
+                            Computer Science Engineering
+                        </option>
+
+                        <option>
+                            Information Technology
+                        </option>
+
+                        <option>
+                            Electronics & Communication
+                        </option>
+
+                        <option>
+                            Mechanical Engineering
+                        </option>
+
+                        <option>
+                            Civil Engineering
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button type="submit" class="form-submit">
+                    Confirm Registration
+                </button>
+
+            </form>
+
+            <div id="registrationSuccess" class="registration-success">
+
+                <div>
+                    ✓
+                </div>
+
+                <h3>
+                    Registration Successful!
+                </h3>
+
+                <p>
+                    You're registered for this event.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
